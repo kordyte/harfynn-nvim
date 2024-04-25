@@ -1,9 +1,8 @@
 <h3 align="center">
-<img src="https://github.com/kordyte/harfynn-nvim/blob/images/harfynn240425.png" width="400" alt="Screenshot"/><br/>
 Harfynn
-</h3>
-
+<img src="https://github.com/kordyte/harfynn-nvim/blob/images/harfynn240425.png" width="800" alt="Screenshot"/><br/>
 A dark colour scheme for neovim.
+</h3>
 
 Supports:
    * Lualine
