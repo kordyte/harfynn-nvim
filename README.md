@@ -1,8 +1,9 @@
 <h3 align="center">
-Harfynn
 <img src="https://github.com/kordyte/harfynn-nvim/blob/images/harfynn240425.png" width="800" alt="Screenshot"/><br/>
-A dark colour scheme for neovim.
+Harfynn
 </h3>
+
+A dark colour scheme for neovim.
 
 Supports:
    * Lualine
@@ -11,7 +12,7 @@ Supports:
    * LSP
    * DAP
 
-Don't expect anything too fancy in the code.
+The code is deliberately simple. Don't expect fanciness.
 
 # Installation
 [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -23,10 +24,6 @@ Don't expect anything too fancy in the code.
 
 ```vim
 colorscheme harfynn 
-```
-
-```lua
-vim.cmd.colorscheme "harfynn"
 ```
 
 If you want Lualine to match, then you will need to set the Lualine theme:
