@@ -241,18 +241,18 @@ local scheme = {
 
 -- ================== Diagnostic =========================
 
-         DiagnosticSignError = hi(pal.attention.error.bg, pal.attention.error.fg, nil, nil),
-          DiagnosticSignWarn = hi(pal.attention.warn.bg, pal.attention.warn.fg, nil, nil),
-          DiagnosticSignInfo = hi(pal.attention.info.bg, pal.attention.info.fg, nil, nil),
-          DiagnosticSignHint = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
-  DiagnosticVirtualTextError = hi(pal.attention.error.fg, pal.attention.error.bg, nil, nil), 
-   DiagnosticVirtualTextWarn = hi(pal.attention.warn.fg, pal.attention.warn.bg, nil, nil),
-   DiagnosticVirtualTextInfo = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
-   DiagnosticVirtualTextHint = hi(pal.attention.info.bg, pal.attention.info.fg, nil, nil),
-    DiagnosticUnderlineError = hi(nil, nil, 'undercurl', pal.attention.error.fg),
-     DiagnosticUnderlineWarn = hi(nil, nil, 'undercurl', pal.attention.warn.fg),
-     DiagnosticUnderlineInfo = hi(nil, nil, 'undercurl', pal.attention.info.fg),
-     DiagnosticUnderlineHint = hi(nil, nil, 'undercurl', pal.attention.info.bg),
+         DiagnosticSignError = hi('#c01111', '#e03030', nil, nil),
+          DiagnosticSignWarn = hi('#402a0e', '#e0e020', nil, nil),
+          DiagnosticSignInfo = hi('#322124', '#e070d0', nil, nil),
+          DiagnosticSignHint = hi('#352416', '#20e0e0', nil, nil),
+  DiagnosticVirtualTextError = hi('#ffa0a0', '#581803', nil, nil), 
+   DiagnosticVirtualTextWarn = hi('#f0f060', '#402a0e', nil, nil),
+   DiagnosticVirtualTextInfo = hi('#f080f0', '#322a24', nil, nil),
+   DiagnosticVirtualTextHint = hi('#00f0f0', '#352416', nil, nil),
+    DiagnosticUnderlineError = hi(nil, nil, 'undercurl', '#ff3030'),
+     DiagnosticUnderlineWarn = hi(nil, nil, 'undercurl', '#f0f060'),
+     DiagnosticUnderlineInfo = hi(nil, nil, 'undercurl', '#f080f0'),
+     DiagnosticUnderlineHint = hi(nil, nil, 'undercurl', '#00f0f0'),
 
 -- ================== DAP =========================
 
