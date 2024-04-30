@@ -16,18 +16,28 @@ local pal = {
 
   attention = {
     error = { 
-      fg = '#c01111',
-      bg = '#ffdddd'
+      fg = '#ffa0a0',
+      bg = '#581803'
     },
 
     warn = {
-      fg = '#b06000',
-      bg = '#f8f080'
+      fg = '#f0f060',
+      bg = '#402a0e'
     },
 
     info =  {
-      fg = '#1144d0',
-      bg = '#77d0d9'
+      fg = '#f080f0',
+      bg = '#322a24'
+    },
+
+    ok = {
+      fg = '#22e022',
+      bg = '#353003'
+    },
+
+    hint = {
+      fg = '#00f0f0',
+      bg = '#352416'
     },
 
     search = {
@@ -149,7 +159,7 @@ local scheme = {
 
          Conceal = hi(pal.fg.alt2, pal.bg.alt2, nil, nil), 
 
-        ErrorMsg = hi(pal.attention.error.fg, pal.attention.error.bg, 'bold', nil),   -- error messages displayed on the command line
+        ErrorMsg = hi(pal.attention.error.fg, pal.attention.error.bg, 'bold', nil), 
          MoreMsg = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
       WarningMsg = hi(pal.attention.warn.fg, pal.attention.warn.bg, nil, nil),
          ModeMsg = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
@@ -241,18 +251,27 @@ local scheme = {
 
 -- ================== Diagnostic =========================
 
-         DiagnosticSignError = hi('#c01111', '#e03030', nil, nil),
+             DiagnosticError = hi(pal.attention.error.fg, pal.attention.error.bg, nil, nil),
+              DiagnosticWarn = hi(pal.attention.warn.fg, pal.attention.warn.bg, nil, nil),
+              DiagnosticInfo = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
+              DiagnosticHint = hi(pal.attention.hint.fg, pal.attention.hint.bg, nil, nil),
+                DiagnosticOk = hi(pal.attention.ok.fg, pal.attention.ok.bg, nil, nil),
+
+  DiagnosticVirtualTextError = hi(pal.attention.error.fg, pal.attention.error.bg, nil, nil), 
+   DiagnosticVirtualTextWarn = hi(pal.attention.warn.fg, pal.attention.warn.bg, nil, nil),
+   DiagnosticVirtualTextInfo = hi(pal.attention.info.fg, pal.attention.info.bg, nil, nil),
+   DiagnosticVirtualTextHint = hi(pal.attention.hint.fg, pal.attention.hint.bg, nil, nil),
+     DiagnosticVirtualTextOk = hi(pal.attention.ok.fg, pal.attention.ok.bg, nil, nil),
+         DiagnosticSignError = hi('#400000', '#e03030', nil, nil),
           DiagnosticSignWarn = hi('#402a0e', '#e0e020', nil, nil),
           DiagnosticSignInfo = hi('#322124', '#e070d0', nil, nil),
           DiagnosticSignHint = hi('#352416', '#20e0e0', nil, nil),
-  DiagnosticVirtualTextError = hi('#ffa0a0', '#581803', nil, nil), 
-   DiagnosticVirtualTextWarn = hi('#f0f060', '#402a0e', nil, nil),
-   DiagnosticVirtualTextInfo = hi('#f080f0', '#322a24', nil, nil),
-   DiagnosticVirtualTextHint = hi('#00f0f0', '#352416', nil, nil),
+            DiagnosticSignOk = hi('#103010', '#30e030', nil, nil),
     DiagnosticUnderlineError = hi(nil, nil, 'undercurl', '#ff3030'),
      DiagnosticUnderlineWarn = hi(nil, nil, 'undercurl', '#f0f060'),
      DiagnosticUnderlineInfo = hi(nil, nil, 'undercurl', '#f080f0'),
      DiagnosticUnderlineHint = hi(nil, nil, 'undercurl', '#00f0f0'),
+       DiagnosticUnderlineOk = hi(nil, nil, 'undercurl', '#00f800'),
 
 -- ================== DAP =========================
 
