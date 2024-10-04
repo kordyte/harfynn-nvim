@@ -43,45 +43,45 @@ local common = {
   -- status is chosen to be complementary but can stand out
   -- Looking at DAP UI makes all of these available in one window
 
-           dialog = hi('#d0dfa0', '#44380e', nil, nil),
+           dialog = hi('#e0c0c0', '#280400', nil, nil),
            -- Any kind of popup: Telescope, LSPInfo, WildMenu, etc
-    dialog_border = hi('#18580e', '#182500', nil, nil),
+    dialog_border = hi('#e0c0c0', '#280400', nil, nil),
   
-         selected = hi('#484848', '#18580e', nil, nil),
+         selected = hi('#e0b8b8', '#55180e', nil, nil),
           -- Things that have been deliberately chosen, contrasts to highlight
   
-      highlighted = hi('#484848', '#cbff97', nil, nil),
+      highlighted = hi('#ffffff', nil, 'bold', nil),
       -- Something that we want to draw attention to, e.g. search results, changed variables in debug
   
-      alert_error = hi('#e31c1c', '#fddddd', nil, nil),
-       alert_warn = hi('#7f7f03', '#fefedc', nil, nil),
-       alert_hint = hi('#780f81', '#f9defc', nil, nil),
-       alert_info = hi('#117980', '#ddfafc', nil, nil),
-         alert_ok = hi('#0f801e', '#defbe1', nil, nil),
+      alert_error = hi('#ffa0a0', '#581803', nil, nil),
+       alert_warn = hi('#f0f060', '#402a0e', nil, nil),
+       alert_hint = hi('#00f0f0', '#352416', nil, nil),
+       alert_info = hi('#f080f0', '#322a24', nil, nil),
+         alert_ok = hi('#22e022', '#353003', nil, nil),
          -- Signs and diagnostic virtual text, or other things that are not 'inline' text
    
-     inline_error = hi('#e31c1c', nil, 'bold', nil),
-      inline_warn = hi('#7f7f03', nil, 'bold', nil),
-      inline_hint = hi('#780f81', nil, 'bold', nil),
-      inline_info = hi('#117980', nil, 'bold', nil),
-        inline_ok = hi('#0f801e', nil, nil, nil),
+     inline_error = hi('#ff7070', nil, 'bold', nil),
+      inline_warn = hi('#f0f060', nil, 'bold', nil),
+      inline_hint = hi('#00f0f0', nil, 'bold', nil),
+      inline_info = hi('#f080f0', nil, 'bold', nil),
+        inline_ok = hi('#22e022', nil, nil, nil),
         -- Errors that are rendered within a block of text, unlike the alert
    
-         alert_add = hi('#0f801e', '#defbe1', nil, nil),
-      alert_delete = hi('#801010', '#fddddd', nil, nil),
-      alert_change = hi('#780f81', '#f9defc', nil, nil),
+         alert_add = hi('#00e000', '#381e1f', nil, nil),
+      alert_delete = hi('#e00000', '#381e1f', nil, nil),
+      alert_change = hi('#e0e000', '#381e1f', nil, nil),
       -- Change formatting for markers, not for inline text
    
-        inline_add = hi(nil, '#a2f5ad', nil, nil),
-     inline_delete = hi(nil, '#f4a3a3', nil, nil),
-     inline_change = hi(nil, '#f9defc', 'undercurl', '#780f81')
+        inline_add = hi('#00e000', nil, nil, nil),
+     inline_delete = hi('#e00000', nil, nil, nil),
+     inline_change = hi('#e0e033', nil, 'undercurl', '#e0e000')
      -- Change formatting for use inline
 }
 
 local syntax = {
   -- These are not the actual highlight gtoups. Instead this is a palette that
   -- can be used to create the highlight groups. thing1 and thing2 should be 
-  -- different but close colours. thing1 and thing1x and thing1y should be the
+  -- different but close colours. thing and thing1x and thing1y should be the
   -- same colour but different text styling, e.g. bold, underline, etc.
              -- Pinks 
              literal1 = hi('#e8d0d0', nil, nil, nil),
@@ -97,7 +97,7 @@ local syntax = {
             variable2 = hi('#94e1a5', nil, nil, nil),
             variable3 = hi('#bee194', nil, nil, nil),
 
-                -- Teals -- !!!
+                -- Teals -- 
                 type1 = hi('#94e1c9', nil, nil, nil),
                type1x = hi('#94e1c9', nil, 'italic', nil),
                 type2 = hi('#94d5e1', nil, nil, nil),
@@ -125,17 +125,17 @@ local syntax = {
             function3 = hi('#e1c294', nil, nil, nil),
            function3x = hi('#e1c294', nil, 'bold', nil),
 
-             -- Reds -- !!!
+             -- Reds -- 
              preproc1 = hi('#e194ab', nil, nil, nil),
              preproc2 = hi('#e19495', nil, nil, nil),
 
-            -- Greys -- !!!
+            -- Grey Green -- 
             metadata1 = hi('#a4bcb0', nil, nil, nil),
            metadata1x = hi('#a4bcb0', '#fffafa', 'bold', nil),
 
               -- Oranges -- !!!
               comment = hi('#777777', nil, 'italic', nil),
-      comment_special = hi('#7f5107', '#fcfb9d', 'bold,italic', nil), -- !!!
+      comment_special = hi('#444444', '#fcfb7d', 'bold,italic', nil), -- !!!
 
           punctuation = hi(common.normal.fg, nil, nil, nil),
   punctuation_special = hi('#0ee0f0', nil, nil, nil),
@@ -145,8 +145,8 @@ local syntax = {
 
            deprecated = hi(nil, nil, 'strikethrough', nil),
 
-                 path = hi('#192ce2', nil, nil, nil),
-                  uri = hi('#192ce2', nil, 'underline', '#a1a9f5'),
+                 path = hi('#5060e2', nil, nil, nil),
+                  uri = hi('#5060e2', nil, 'underline', '#a1a9f5'),
  
            text_title = hi('#101010', nil, 'underline', '#101010'),
           text_title1 = hi('#101010', nil, 'bold,underline', '#101010'),
@@ -222,7 +222,7 @@ local ui_group = {
 
     QuickFixLine = hi(nil, '#fddddd', nil, nil),
     
-    WinSeparator = hi('#7f5107', '#f9f9f5', nil, nil),
+    WinSeparator = hi('#7f5107', common.gutter.bg, nil, nil),
        VertSplit = 'WinSeparator',
           
          -- WinBar = hi(nil, common.gutter.bg, nil, nil),
@@ -285,7 +285,7 @@ local ui_group = {
        SpellRare = hi(nil, nil, 'undercurl', common.alert_hint.fg),
       SpellLocal = hi(nil, nil, 'undercurl', common.alert_hint.fg),
 
-       Directory = hi('#192ce2', nil, nil, nil),
+       Directory = hi(syntax.path.fg, nil, nil, nil),
 
          DiffAdd = common.alert_add,
       DiffDelete = common.alert_delete,
@@ -301,9 +301,9 @@ local diagnostic_group = {
                 DiagnosticOk = common.alert_ok,
 
     DiagnosticUnderlineError = hi(nil, nil, 'undercurl', '#e31c1c'),
-     DiagnosticUnderlineWarn = hi(nil, nil, 'undercurl', '#f1990e'),
-     DiagnosticUnderlineInfo = hi(nil, nil, 'undercurl', '#1fe0ed'),
-     DiagnosticUnderlineHint = hi(nil, nil, 'undercurl', '#d319e2'),
+     DiagnosticUnderlineWarn = hi(nil, nil, 'undercurl', '#f1f10e'),
+     DiagnosticUnderlineInfo = hi(nil, nil, 'undercurl', '#d319e2'),
+     DiagnosticUnderlineHint = hi(nil, nil, 'undercurl', '#1fe0ed'),
        DiagnosticUnderlineOk = hi(nil, nil, 'undercurl', '#19e233'),
 
   DiagnosticVirtualTextError = common.alert_error, 
@@ -333,6 +333,7 @@ local telescope_group = {
   TelescopeSelectionCaret = hi(common.normal.fg, common.selected.bg, nil, nil),
   TelescopeMultiSelection = common.selected,
         TelescopeMatching = common.highlighted,
+    TelescopePromptPrefix = hi(common.normal.fg, nil, nil, nil)
 }
 
 
