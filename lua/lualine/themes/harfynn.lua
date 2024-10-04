@@ -1,4 +1,3 @@
-local p = require('collaterlie_palette')
 
 return {
   normal = {
