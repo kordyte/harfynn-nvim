@@ -105,7 +105,7 @@ local syntax = {
                 type3 = hi('#94e1ce', nil, nil, nil),
                type3x = hi('#94e1ce', nil, 'italic', nil),
 
-           -- Olive 
+           -- Blue 
            namespace1 = hi('#9c94e1', nil, nil, nil),
 
              -- Purples
@@ -131,9 +131,9 @@ local syntax = {
 
             -- Grey Green -- 
             metadata1 = hi('#a4bcb0', nil, nil, nil),
-           metadata1x = hi('#a4bcb0', '#fffafa', 'bold', nil),
+           metadata1x = hi('#a4bcb0', '#552c33', 'bold', nil),
 
-              -- Oranges -- !!!
+              -- Greys
               comment = hi('#777777', nil, 'italic', nil),
       comment_special = hi('#444444', '#fcfb7d', 'bold,italic', nil), -- !!!
 
@@ -145,41 +145,41 @@ local syntax = {
 
            deprecated = hi(nil, nil, 'strikethrough', nil),
 
-                 path = hi('#5060e2', nil, nil, nil),
-                  uri = hi('#5060e2', nil, 'underline', '#a1a9f5'),
+                 path = hi('#a494f5', nil, nil, nil),
+                  uri = hi('#a494f5', nil, 'underline', '#a1a9f5'),
  
-           text_title = hi('#101010', nil, 'underline', '#101010'),
-          text_title1 = hi('#101010', nil, 'bold,underline', '#101010'),
-          text_title2 = hi('#101010', nil, 'bold,underline', '#303030'),
-          text_title3 = hi('#202020', nil, 'bold,underline', '#404040'),
-          text_title4 = hi('#202020', nil, 'underline', '#404040'),
-          text_title5 = hi('#303030', nil, 'underline', '#606060'),
-          text_title5 = hi('#404040', nil, 'underline', '#808080'),
+           text_title = hi('#f19940', nil, 'underline', '#f19940'),
+          text_title1 = hi('#f19940', nil, 'bold,underline', '#f19940'),
+          text_title2 = hi('#ed9050', nil, 'bold,underline', '#ed9050'),
+          text_title3 = hi('#e9a060', nil, 'bold,underline', '#e9a060'),
+          text_title4 = hi('#e9b060', nil, 'underline', '#e9b060'),
+          text_title5 = hi('#e5bd70', nil, 'underline', '#e5bd70'),
+          text_title5 = hi('#e4c880', nil, 'underline', '#e4c880'),
           text_strong = hi(nil, nil, 'bold', nil),
           text_italic = hi(nil, nil, 'italic', nil),
    text_strikethrough = hi(nil, nil, 'strikethrough', nil),
        text_underline = hi(nil, nil, 'underline', nil),
-            text_link = hi('#192ce2', nil, nil, nil),
+            text_link = hi('#a494f5', nil, nil, nil),
              text_raw = hi('#ededed', nil, nil, nil),
 }
 
 local terminal_colours = {
   -- These are used to set the g:terminal_color_X variables.
   '#000000',  -- Black
-  '#e31c1c',  -- Red
-  '#19e233',  -- Green
-  '#f0f005',  -- Yellow
-  '#192ce2',  -- Blue
-  '#d319e2',  -- Magenta
-  '#1fe0ed',  -- Cyan (bright)
+  '#ff616e',  -- Red
+  '#8bf88b',  -- Green
+  '#f4fc83',  -- Yellow
+  '#a494f5',  -- Blue
+  '#f887e5',  -- Magenta
+  '#6ef2e7',  -- Cyan
   '#fdfdfc',  -- White
   '#444444',  -- Black (bright)
-  '#ff1c1f',  -- Red (bright)
-  '#19ff33',  -- Green (bright)
-  '#ffff05',  -- Yellow (bright)
-  '#192cff',  -- Blue (bright)
-  '#e319f0',  -- Magenta (bright)
-  '#1ff0fd',  -- Cyan (bright)
+  '#ff3838',  -- Red (bright)
+  '#47fa47',  -- Green (bright)
+  '#f3ff52',  -- Yellow (bright)
+  '#7742ff',  -- Blue (bright)
+  '#f73db8',  -- Magenta (bright)
+  '#4afced',  -- Cyan (bright)
   '#ffffff'   -- White (bright)
 }
 
@@ -199,10 +199,10 @@ local ui_group = {
         NormalNC = common.gutter,  
          -- Normal text in non-current windows, will be used as the background when a dialog is shown
 
-          Cursor = hi('#000000', '#f1990e', nil, nil), -- for the cursor highlights to work, 
-         nCursor = hi('#000000', '#f1990e', nil, nil), -- the highlight group will need to be set for
-         vCursor = hi('#000000', '#fefe50', nil, nil), -- the cursor, e.g.
-         iCursor = hi('#000000', '#192ce2', nil, nil), -- set guicursor=n:block-nCursor
+          Cursor = hi('#000000', '#f1a020', nil, nil), -- for the cursor highlights to work, 
+         nCursor = hi('#000000', '#f1a020', nil, nil), -- the highlight group will need to be set for
+         vCursor = hi('#000000', '#f8f880', nil, nil), -- the cursor, e.g.
+         iCursor = hi('#000000', '#7742ff', nil, nil), -- set guicursor=n:block-nCursor
          rCursor = hi('#fddddd', '#e31c1c', nil, nil), -- Needs support from the terminal, nvim-qt qorks
          cCursor = hi('#000000', '#d319e2', nil, nil),
 
@@ -220,13 +220,13 @@ local ui_group = {
 
          MsgArea = common.gutter,
 
-    QuickFixLine = hi(nil, '#fddddd', nil, nil),
+    QuickFixLine = hi(nil, common.gutter.bg, nil, nil),
     
     WinSeparator = hi('#7f5107', common.gutter.bg, nil, nil),
        VertSplit = 'WinSeparator',
           
          -- WinBar = hi(nil, common.gutter.bg, nil, nil),
-          WinBar = hi(nil, '#ff0000', nil, nil),
+          WinBar = hi(nil, common.gutter.bg, nil, nil),
         WinBarNC = hi(nil, nil, nil, nil),
 
          Tabline = hi(common.external.fg, common.external.bg, 'italic', nil),
@@ -243,10 +243,10 @@ local ui_group = {
       Whitespace = hi('#070e44', nil, nil, nil),
       SpecialKey = hi('#0f801e', nil, nil, nil), 
 
-          Visual = hi(nil, '#fef8d0', nil, nil),
-       VisualNOS = hi(nil, '#ededed', nil, nil),  
+          Visual = hi(nil, '#55380e', nil, nil),
+       VisualNOS = hi(nil, '#45280e', nil, nil),  
        -- for when window does not have focus (X11 only)
-        VisualNC = hi(nil, '#ededed', nil, nil),  
+        VisualNC = hi(nil, '#45280e', nil, nil),  
         -- for when window does not have focus (X11 only)
 
          Conceal = hi('#818181', nil, nil, nil), 
