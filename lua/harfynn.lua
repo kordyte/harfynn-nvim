@@ -68,12 +68,12 @@ local common = {
         -- Errors that are rendered within a block of text, unlike the alert
    
          alert_add = hi('#00e000', '#381e1f', nil, nil),
-      alert_delete = hi('#e00000', '#381e1f', nil, nil),
+      alert_delete = hi('#e02222', '#381e1f', nil, nil),
       alert_change = hi('#e0e000', '#381e1f', nil, nil),
       -- Change formatting for markers, not for inline text
    
         inline_add = hi('#00e000', nil, nil, nil),
-     inline_delete = hi('#e00000', nil, nil, nil),
+     inline_delete = hi('#e02222', nil, nil, nil),
      inline_change = hi('#e0e033', nil, 'undercurl', '#e0e000')
      -- Change formatting for use inline
 }
@@ -202,18 +202,18 @@ local ui_group = {
           Cursor = hi('#000000', '#f1a020', nil, nil), -- for the cursor highlights to work, 
          nCursor = hi('#000000', '#f1a020', nil, nil), -- the highlight group will need to be set for
          vCursor = hi('#000000', '#f8f880', nil, nil), -- the cursor, e.g.
-         iCursor = hi('#000000', '#7742ff', nil, nil), -- set guicursor=n:block-nCursor
+         iCursor = hi('#000000', '#429aff', nil, nil), -- set guicursor=n:block-nCursor
          rCursor = hi('#fddddd', '#e31c1c', nil, nil), -- Needs support from the terminal, nvim-qt qorks
-         cCursor = hi('#000000', '#d319e2', nil, nil),
+         cCursor = hi('#000000', '#e458e1', nil, nil),
 
         CursorIM = hi(nil, nil, 'bold', nil),      -- for IME mode (inputing multibyte characters)
-    CursorColumn = hi(nil, '#55480e', nil, nil),   -- for when cursorcolumn is set
-      CursorLine = hi(nil, '#55480e', nil, nil),     -- for when cursorline is set
+    CursorColumn = hi(nil, '#44340d', nil, nil),   -- for when cursorcolumn is set
+      CursorLine = hi(nil, '#44340d', nil, nil),     -- for when cursorline is set
 
           LineNr = hi(common.gutter.fg, common.gutter.bg, 'italic', nil),
-    CursorLineNr = hi(common.normal.fg, '#55480e', 'bold,italic', nil),
+    CursorLineNr = hi(common.normal.fg, '#44340d', 'bold,italic', nil),
       SignColumn = hi(nil, common.gutter.bg, nil, nil),
-  CursorLineSign = hi(nil, '#fee8b8', nil, nil), 
+  CursorLineSign = common.gutter, 
 
       StatusLine = common.status, 
     StatusLineNC = common.status_inactive,
@@ -235,13 +235,13 @@ local ui_group = {
            Title = hi(common.external.fg, nil, nil, nil),
            -- number in a tab with more than one window
 
-      MatchParen = hi(nil, common.highlighted.bg, nil, nil),
+      MatchParen = hi('#eeee00', nil, 'bold', nil), 
 
      EndOfBuffer = common.external,    
      -- Bottom of screen when scrolled up
-         NonText = hi('#f4a3a3', nil, nil, nil), 
-      Whitespace = hi('#070e44', nil, nil, nil),
-      SpecialKey = hi('#0f801e', nil, nil, nil), 
+         NonText = hi('#909000', nil, nil, nil), 
+      Whitespace = hi('#ff7ff8', nil, nil, nil),
+      SpecialKey = hi('#ff7ff8', nil, nil, nil), 
 
           Visual = hi(nil, '#55380e', nil, nil),
        VisualNOS = hi(nil, '#45280e', nil, nil),  
@@ -249,10 +249,10 @@ local ui_group = {
         VisualNC = hi(nil, '#45280e', nil, nil),  
         -- for when window does not have focus (X11 only)
 
-         Conceal = hi('#818181', nil, nil, nil), 
+         Conceal = hi('#ff9ff8', nil, nil, nil), 
 
-          Folded = hi('#0f801e', '#fefedc', nil, nil),
-      FoldColumn = hi('#0f801e', '#fefedc', 'bold', nil),
+          Folded = hi('#c8c840', '#240404', 'italic', nil),
+      FoldColumn = hi('#c8c840', '#240404', 'italic,bold', nil),
 
           Search = common.highlighted,
        CurSearch = hi(common.highlighted.fg, common.highlighted.bg, 'bold', nil),
@@ -261,9 +261,9 @@ local ui_group = {
            Pmenu = common.dialog, 
         PmenuSel = common.selected,
     PmenuSelBold = hi(common.selected.fg, common.selected.bg, 'bold', nil),
-      PmenuThumb = hi(nil, '#f0e0a0', nil, nil), 
+      PmenuThumb = hi(nil, '#4e0b03', nil, nil), 
       -- Only observed this in completion dialogs
-       PmenuSbar = hi(nil, '#f8f0d8', nil, nil),
+       PmenuSbar = hi(nil, '#360702', nil, nil),
 
      NormalFloat = common.dialog,
       FloatTitle = hi(common.normal.fg, nil, 'bold' ,nil),
@@ -272,7 +272,7 @@ local ui_group = {
      -- background is blended to form the shadow
         WildMenu = common.dialog,
 
-        ErrorMsg = hi('#fefedc', '#e31c1c', 'bold', nil),   
+        ErrorMsg = hi('#fefedc', '#e34040', 'bold', nil),   
         -- error messages displayed on the command line
       WarningMsg = hi('#7f5107', '#f4a3a3', nil, nil),
          MoreMsg = hi('#000000', '#fddddd', nil, nil),
