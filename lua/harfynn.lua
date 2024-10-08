@@ -280,7 +280,7 @@ local ui_group = {
          ModeMsg = hi('#202020', '#f8d59e', nil, nil),
     MsgSeparator = common.external,
 
-        SpellBad = hi(nil, common.alert_error.fg, 'undercurl', common.alert_error.fg),
+        SpellBad = hi(common.inline_error.fg, nil, 'undercurl', common.inline_error.fg),
         SpellCap = hi(nil, nil, 'undercurl', common.alert_warn.fg),
        SpellRare = hi(nil, nil, 'undercurl', common.alert_hint.fg),
       SpellLocal = hi(nil, nil, 'undercurl', common.alert_hint.fg),
@@ -585,9 +585,9 @@ local treesitter_syntax_group = {
 }
 
 local dap_group = {
-                      DapSign = hi('#f1990e', common.gutter.bg, nil, nil),
+                      DapSign = hi('#ff6060', common.gutter.bg, nil, nil),
               DapRejectedSign = hi('#efa4f6', common.gutter.bg, nil, nil),
-               DapStoppedSign = hi('#f1990e', '#fcfb9d', nil, nil),
+               DapStoppedSign = hi('#8fff00', common.gutter.bg, nil, nil),
                    
                    DapUIScope = common.gutter,
               DapUIDecoration = common.normal, 
@@ -611,15 +611,15 @@ local dap_group = {
          DapUIBreakpointsInfo = syntax.keyword1y,
   DapUIBreakpointsCurrentLine = common.selected,
          DapUIBreakpointsLine = 'DapUILineNumber',
-  DapUIBreakpointsDisableLine = hi('#fcfb9d', nil, nil, nil),
-                DapUIStepOver = hi('#f1990e', nil, nil, nil),
-                DapUIStepInto = hi('#f1990e', nil, nil, nil),
-                DapUIStepBack = hi('#d319e2', nil, nil, nil),
-                 DapUIStepOut = hi('#f1990e', nil, nil, nil),
-                    DapUIStop = hi('#e31c1c', nil, nil, nil, nil),
-               DapUIPlayPause = hi('#19e233', nil, nil, nil), 
-                 DapUIRestart = hi('#19e233', nil, nil, nil),
-             DapUIUnavailable = hi('#cdcdcd', nil, nil, nil),
+  DapUIBreakpointsDisableLine = hi('#efa4f6', nil, nil, nil),
+                DapUIStepOver = hi('#f1d050', nil, nil, nil),
+                DapUIStepInto = hi('#f1d050', nil, nil, nil),
+                DapUIStepBack = hi('#e340f2', nil, nil, nil),
+                 DapUIStepOut = hi('#f1d050', nil, nil, nil),
+                    DapUIStop = hi('#ff5c5c', nil, nil, nil),
+               DapUIPlayPause = hi('#59f283', nil, nil, nil), 
+                 DapUIRestart = hi('#59f283', nil, nil, nil),
+             DapUIUnavailable = hi('#909090', nil, nil, nil),
 }
 
 local function highlight(group, style)
