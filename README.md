@@ -1,5 +1,5 @@
 <h3 align="center">
-<img src="https://github.com/kordyte/harfynn-nvim/blob/images/harfynn240425.png" width="800" alt="Screenshot"/><br/>
+<img src="https://github.com/kordyte/harfynn-nvim/blob/images/harfynn241007.png" width="800" alt="Screenshot"/><br/>
 Harfynn
 </h3>
 
@@ -7,10 +7,11 @@ A dark colour scheme for neovim.
 
 Supports:
    * Lualine
-   * Treesitter
    * Telescope
+   * Treesitter
    * LSP
    * DAP
+   * Neovim terminal
 
 The code is deliberately simple. Don't expect fanciness.
 
