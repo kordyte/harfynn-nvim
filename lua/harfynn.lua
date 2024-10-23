@@ -669,6 +669,8 @@ M.colorscheme = function()
   apply_group(dap_group)
 
   apply_terminal_colours(terminal_colours)
+
+  vim.g.colors_name = 'harfynn'
 end
 
 
